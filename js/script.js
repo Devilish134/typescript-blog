@@ -38,16 +38,15 @@
             /* find id of the article */
             const articleID = article.getAttribute("id");
             /* find elem that holds the title and retrieve it */
-            const articleTitle = article.querySelector(selectorTitle)
-                .innerHTML;
+            const articleTitle = article.querySelector(selectorTitle).innerHTML;
             /* create HTML of the link */
-            const linkHTML = ('<li><a href="#' +
+            const linkHTML = '<li><a href="#' +
                 articleID +
                 '"><span>' +
                 articleTitle +
-                "</span></a></li>");
+                "</span></a></li>";
             /* insert link into html variable */
-            html = (html + linkHTML);
+            html = html + linkHTML;
         }
         /* add all the links from html variable to titleList */
         titleList.insertAdjacentHTML("afterbegin", html);
@@ -74,13 +73,9 @@
             /* loop through tags */
             for (let tag of tagsArray) {
                 /* generate HTML of the link */
-                const linkHTML = ('<li><a href="#tag-' +
-                    tag +
-                    '">' +
-                    tag +
-                    "</a></li>");
+                const linkHTML = '<li><a href="#tag-' + tag + '">' + tag + "</a></li>";
                 /* add generated code to html variable */
-                html = (html + linkHTML);
+                html = html + linkHTML;
                 /* check if tag is NOT already in allTags, if not -> push it */
                 if (!allTags.includes(tag)) {
                     allTags.push(tag);
@@ -115,11 +110,7 @@
                 allAuthors.push(author);
             }
             /* create author link and add it  to article */
-            const html = ('by <a href="#author-' +
-                author +
-                '">' +
-                author +
-                "</a>");
+            const html = 'by <a href="#author-' + author + '">' + author + "</a>";
             articleAuthor.insertAdjacentHTML("beforeend", html);
         }
         /* find wrapper for author links in sidebar */
