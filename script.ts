@@ -44,16 +44,16 @@
     /* find all articles and loop through each of them */
     const articles = document.querySelectorAll(
       selectorArticle + customSelector
-    ) as NodeListOf<HTMLElement>;
+    ) as any;
     for (let article of articles) {
       /* find id of the article */
       const articleID = article.getAttribute("id") as string;
 
       /* find elem that holds the title and retrieve it */
-      const articleTitle = article.querySelector(selectorTitle).innerHTML;
+      const articleTitle = article.querySelector(selectorTitle)
+        .innerHTML as HTMLElement;
 
-      /* create HTML of the link */
-      const linkHTML =
+      /* create HTML of the link */ const linkHTML =
         '<li><a href="#' +
         articleID +
         '"><span>' +
